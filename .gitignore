@@ -1,6 +1,8 @@
 ubot/
 ebot/
 models/
+PUCIT-ur/
+
 # *~
 # *pyc
 # *.DS_Store
