@@ -1,0 +1,211 @@
+*~
+*pyc
+*.DS_Store
+*.egg
+*.eggs
+*.egg-info
+*.log
+*.pyc
+*.sass-cache
+*build/
+*dat
+.env
+venv
+.pytest_cache/
+.ipynb_checkpoints
+.ruby-version
+.tox
+.pytype
+dist/
+pip-wheel-metadata
+docs/nlu/_build
+docs/_build
+server/
+scala/
+mongodb/
+.cache/
+build/
+*.egg-info/
+jnk/
+logs/
+tmp/
+profile.*
+*.sqlite
+lastmile_ai/learn/plots/
+*npy
+*#
+/config.json
+*log.json
+.coverage
+.coveralls.yml
+.idea/
+*.iml
+out/
+.vscode/
+tmp_training_data.json
+.DS_Store
+models/
+.mypy_cache/
+*.tar.gz
+docs/nlu/key
+docs/nlu/key.pub
+secrets.tar
+.pytest_cache
+src
+test_download.zip
+bower_components/
+build/lib/
+docs/core/_build
+/models/
+node_modules/
+npm-debug.log
+examples/moodbot/py3/
+.python-version
+tokens.dat
+graph.png
+graph.html
+story_graph.html
+story_graph.dot
+debug.md
+examples/restaurantbot/models*
+examples/moodbot/*.png
+examples/moodbot/errors.json
+examples/formbot/models*
+examples/concertbot/data*
+examples/concertbot/models*
+examples/moodbot/models*
+docs/core/key 
+docs/core/key.pub
+failed_stories.md
+errors.json
+pip-wheel-metadata/*
+events.db
+events.db-shm
+events.db-wal
+rasa.db
+rasa.db-shm
+rasa.db-wal
+*.swp
+*.coverage*
+env
+.dir-locals.el
+.history
+
+
+
+
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Translations
+*.mo
+*.pot
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+
+.env
+db.sqlite3
+
+
+
+
+*.DS_Store
+*.pyc
+*.swp
+temp/*
+dist/*
+build/*
+keras/datasets/data/*
+keras/datasets/temp/*
+docs/site/*
+docs/sources/*
+docs/theme/fonts/*
+docs/theme/img/*
+tags
+Keras.egg-info
+examples/img/*
+
+# test-related
+.coverage
+.cache
+.pytest_cache
+
+# developer environments
+.idea
+.vscode

@@ -1,0 +1,667 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false
+intents:
+- init:
+    triggers: utter_init
+- greet
+- goodbye
+- calculate_aggregate
+- programs_info
+- procedure_to_apply
+- merit_formula
+- eligibility_criteria
+- fee_structure
+- priciple_list
+- vc_list
+- calender:
+    triggers: utter_calender
+- time_table:
+    triggers: utter_time_table
+- regulations_attandence:
+    triggers: utter_regulations_attandence
+- regulations_workload:
+    triggers: utter_regulations_workload
+- regulations_incomplete_semester_or_course:
+    triggers: utter_regulations_incomplete_semester_or_course
+- regulations_course_withdrawal:
+    triggers: utter_regulations_course_withdrawal
+- regulations_semester_withdrawal:
+    triggers: utter_regulations_semester_withdrawal
+- regulations_semester_freeze:
+    triggers: utter_regulations_semester_freeze
+- regulations_change_of_section:
+    triggers: utter_regulations_change_of_section
+- regulations_change_of_session:
+    triggers: utter_regulations_change_of_session
+- regulations_student_assesment:
+    triggers: utter_regulations_student_assesment
+- regulations_grading_system:
+    triggers: utter_regulations_grading_system
+- regulations_dress_code_for_males:
+    triggers: utter_regulations_dress_code_for_males
+- regulations_dress_code_for_females:
+    triggers: utter_regulations_dress_code_for_females
+- regulations_penalty_for_dress_code_voilation:
+    triggers: utter_regulations_penalty_for_dress_code_voilation
+- Blood_donor_society:
+    triggers: utter_info_Blood_donor_society
+- PUCIT_media_society:
+    triggers: utter_info_PUCIT_media_society
+- Sports_society:
+    triggers: utter_info_Sports_society
+- Literary_society:
+    triggers: utter_info_Literary_society
+- Computer_society:
+    triggers: utter_info_Computer_society
+- Event_management_society:
+    triggers: utter_info_Event_management_society
+- contact_info:
+    triggers: utter_contact_info
+- guideline_to_apply_for_entrytest:
+    triggers: utter_guideline_to_apply_for_entrytest
+- areas_of_research:
+    triggers: utter_areas_of_research
+- seats_for_undergraduate:
+    triggers: utter_seats_for_undergraduate
+- seats_for_graduate:
+    triggers: utter_seats_for_graduate
+- entrytest_place:
+    triggers: utter_entrytest_place
+- graduate_classes_place:
+    triggers: utter_graduate_classes_place
+- admission_start:
+    triggers: utter_admission_start
+- transport_facility:
+    triggers: utter_transport_facility
+- admission_in_afternoon:
+    triggers: utter_admission_in_afternoon
+- standardized_tests:
+    triggers: utter_standardized_tests
+- miss_my_test_slot:
+    triggers: utter_miss_my_test_slot
+- PhD_teachers:
+    triggers: utter_PhD_teachers
+- scholarships:
+    triggers: utter_scholarships
+- Hostel_faculty:
+    triggers: utter_Hostel_faculty
+- bring_other_things:
+    triggers: utter_bring_other_things
+- migrate:
+    triggers: utter_migrate
+- cocurricular_activities:
+    triggers: utter_cocurricular_activities
+- donot_bring_required_document:
+    triggers: utter_donot_bring_required_document
+- short_courses:
+    triggers: utter_short_courses
+- retake_entrytest:
+    triggers: utter_retake_entrytest
+- entrytest_shifts:
+    triggers: utter_entrytest_shifts
+- exchange_program:
+    triggers: utter_exchange_program
+- HEC_recognized_institute:
+    triggers: utter_HEC_recognized_institute
+- undergraduate_classes_place:
+    triggers: utter_undergraduate_classes_place
+- documents_to_bring_test_center:
+    triggers: utter_documents_to_bring_test_center
+- spring_admission:
+    triggers: utter_spring_admission
+- timings_for_classes:
+    triggers: utter_timings_for_classes
+- reserve_seats:
+    triggers: utter_reserve_seats
+- choose_degree
+- choose_bs_program
+- out_of_scope
+
+entities:
+- bs_program
+- degree
+slots:
+  bs_program:
+    type: categorical
+    values:
+    - it
+    - cs
+    - se
+  degree:
+    type: categorical
+    values:
+    - bs
+    - msc
+    - mphill
+    - phd
+responses:
+  utter_init:
+  - text: Welcome, I am Jarvis. You can ask me any query regarding PUCIT.
+  utter_greet:
+  - text: Hello dear! Welcome to Jarvis.
+  utter_goodbye:
+  - text: Bye
+  utter_ask_degree:
+  - buttons:
+    - payload: /choose_degree{"degree":"bs"}
+      title: BS
+    - payload: /choose_degree{"degree":"msc"}
+      title: MSc
+    - payload: /choose_degree{"degree":"mphill"}
+      title: ‏‏‏‏‏Mphill
+    - payload: /choose_degree{"degree":"phd"}
+      title: PhD
+    text: For which degree you want to gather information
+  utter_ask_bs_program:
+  - buttons:
+    - payload: /choose_bs_program{"degree":"it"}
+      title: IT
+    - payload: /choose_bs_program{"degree":"cs"}
+      title: CS
+    - payload: /choose_bs_program{"degree":"se"}
+      title: SE
+    text: For which bs program you want to gather information
+  utter_calculate_aggregate_BS:
+  - text: Visit the [link](https://pucithd.com/aggregate-calculator.html)
+  utter_programs_bs_cs:
+  - text: The objectives of the BS Computer Science program are to -build a strong
+      foundation in theoretical concepts in computing and software engineering. -provide
+      a system-wide perspective of hardware and low-level software design and development.
+      -develop proficiency in designing and analyzing algorithms for building efficient
+      solutions. -nurture problem-solving skills, clarity of thought, and creativity.
+  utter_programs_bs_se:
+  - text: The objectives of the BS Software Engineering program are to -build a strong
+      foundation in theoretical concepts in computing and software engineering. -enable
+      the use of software engineering methodologies and tools for requirements gathering,
+      designing, engineering and testing software systems. -nurture problem-solving
+      skills, clarity of thought, and creativity.
+  utter_programs_bs_it:
+  - text: The objectives of the BS Information Technology program are to -cultivate
+      skills that cater to organizational needs, such as system maintenance, management
+      of data, and secure access. -hone the skills that facilitate learning and integrating
+      new tools and technologies. -nurture software development and problem-solving
+      skills, clarity of thought, and creativity. -build a strong foundation in theoretical
+      concepts in computing and software engineering. -prepare students for rigours
+      of graduate studies, as well as for careers in the industry.
+  utter_programs_msc_cs:
+  - text: Visit the [link](https://pucit.edu.pk/m-sc-cs/)
+  utter_programs_mphill_cs:
+  - text: Visit the [link](https://pucit.edu.pk/m-phil-cs/)
+  utter_programs_PHD:
+  - text: Visit the [link](https://pucit.edu.pk/phd/)
+  utter_procedure_to_apply_for_BS_and_MSc:
+  - text: "Admission Procedure: (For Those who are going to applying from University.)\
+      \ 1. After your intermediate result Go to PUCIT (Old Campus) 9:00 to 5:00. 2.\
+      \ Go to lab and fill the form according to instructions as provide by the attendant(there\
+      \ you need your documents of Matric and F.Sc to put your academic records).\
+      \ 3. After completing the form, you should have to finalize it(No changes can\
+      \ be made once you finalize it). 4. Once you finalized it you will get two or\
+      \ three links , one is to print challan form and second is print admission form\
+      \ and third is download challan form. 5. Call your lab attendant , he will print\
+      \ your both form's. Then collect them where the printer lies. 6. Submit the\
+      \ challan form with fees in HBL Bank Old Campus. 7. Attach one picture at your\
+      \ admission form (because while filling admission form in lab on computer, you\
+      \ cannot upload picture ). 8. Go to Nearest Photo copy shop and take 2 copies\
+      \ of submitted challan form. 9. Then staple your admission form and Original\
+      \ challan form and then go to admission Office and submit them and keep copies\
+      \ with you. 10. Admission Office will give you a receipt on which your admission\
+      \ form number is written. 11. Take the receipt and then keep receipt and challan\
+      \ form copies at safer place. Select your preferences, very carefully."
+  utter_procedure_to_apply_for_MPhill:
+  - text: 'In order to apply for MPhil (CS/ RSGIS) and PhD (CS) at Punjab University  College
+      of Information Technology (PUCIT), the applicant must fill the following  two
+      forms. The first link is for entrance test registration and the second link
+      is  for admission application.  Apply for admission: http://111.68.103.22/admissions/  Apply
+      for entrance test : https://entrytest.pucit.edu.pk/mphilphd/'
+  utter_procedure_to_apply_for_PHD:
+  - text: working on this........
+  utter_merit_formula_for_BS:
+  - text: 'Merit Calculator Formula: ( 1/4 of matric marks + marks in inter + 20 (if
+      u r hafiz -e- Quran) )/ ( 1/4 of total matric marks + tolat marks of inter)
+      = A A * 70 = B ( Marks obtain in Entry test * 30 ) / total test marks = C Final
+      Merit Score = B+C'
+  utter_merit_formula_for_MSc:
+  - text: ( 1/4 of matric marks + 1/5 of inter marks + total marks of BA/B.Sc + 20
+      (if u r hafiz -e- Quran) ) / ( 1/4 of total matric marks + 1/5 of tolat marks
+      of inter + total marks of BA/B.Sc) = A A * 70 = B ( Marks obtain in Entry test
+      * 30 ) / total test marks = C Final Merit Score = B+C
+  utter_merit_formula_for_MPhill:
+  - text: Visit the [link](http://pu.edu.pk/regulations/contents/Admission-criteria.html)
+  utter_eligibility_criteria_BS:
+  - text: ICS / F.Sc. Pre-Engineering / F.Sc. Pre-Medical with additional Math./A-Level
+      with Math or DAE Diploma
+  utter_eligibility_criteria_MSc:
+  - text: BCS(3years)/B.Com/ B.A/ B.Sc with elective Mathematics or Computer Studies.
+  utter_eligibility_criteria_MPhill:
+  - text: M.Sc (CS), M.Sc (IT) / BS/(Hons.) with Computer Science/ Information Technology/
+      Software Engineering/ Computer Engineering/ Information Systems/ Bioinformatics/
+      Electrical Engineering/ Business and Information Technology (BBIT) Degree or
+      its equivalent
+  utter_eligibility_criteria_PhD:
+  - text: 1- MS/M.Phil/M.Sc. (Engg/Hons.) with Computer Science/ Information Technology/
+      Software Engineering/ Computer Engineering/ Information Systems/   Bioinformatics
+      Degree or its equivalent in the relevant subject from a recognized University
+      (at least 18 year of education) with minimum CGPA > 3.00/4.00 as per Higher
+      Education Commission (HEC) rules 2-50 percent marks are mandatory for academic
+      qualification otherwise candidate will not be able to appear in the written
+      test
+  utter_fee_structure_for_BS:
+  - text: Visit the [link](https://pucit.edu.pk/fee-structure/)
+  utter_fee_structure_for_MSc:
+  - text: Visit the [link](https://pucit.edu.pk/fee-structure/) 
+  utter_fee_structure_for_MPhill:
+  - text: Visit the [link](https://pucit.edu.pk/fee-structure/)
+  utter_fee_structure_for_PhD:
+  - text: Visit the [link](https://pucit.edu.pk/fee-structure/)
+
+  utter_priciple_list_bs_it:
+  - text: Visit the [link](https://pucit.edu.pk/bs-information-technology-2/)
+  utter_priciple_list_bs_se:
+  - text: Visit the [link](https://pucit.edu.pk/bs-software-engineering-2/)
+  utter_priciple_list_bs_cs:
+  - text: Visit the [link](https://pucit.edu.pk/bs-computer-science-2/)
+  utter_priciple_list_ms_cs:
+  - text: Visit the [link](https://pucit.edu.pk/msc-in-computer-science)
+  utter_vc_list_bs_it:
+  - text: Visit the [link](https://pucit.edu.pk/bs-information-technology-3/)
+  utter_vc_list_bs_cs:
+  - text: Visit the [link](https://pucit.edu.pk/bs-computer-science-3/)
+  utter_vc_list_bs_se:
+  - text: Visit the [link](https://pucit.edu.pk/bs-software-engineering-3/)
+  utter_vc_list_ms_cs:
+  - text: Visit the [link](https://pucit.edu.pk/msc-cs/)
+  utter_calender:
+  - text: Visit the [link](https://pucit.edu.pk/wp-content/uploads/2019/09/academic-calendar-Fall-2019-Spring-2020.pdf)
+  utter_time_table:
+  - text: Visit the [link]
+  utter_rules_and_regulations:
+  - text: Visit the [link](http://pu.edu.pk/regulations/contents/rules-regulations.html)
+  utter_regulations_attandence:
+  - text: 75% attendance is required for passing a course. A student with less than
+      required attendance in theory and practical separately shall be dropped from
+      the course, shall not be allowed to appear in the final examination of the course,
+      and shall be awarded grade ‘F’ (Fail). /nThe absence as a result of Late Admission,
+      Change of Course or Leave will also be counted for dropping from the course.
+  utter_regulations_workload:
+  - text: A student is normally required to take the prescribed courses offered by
+      the College in each semester. However, in special circumstances, a student may
+      add/drop a course with prior approval of the Principal. Permission to add/drop
+      a course must be obtained within the time specified in the College academic
+      calendar, with prior approval of the Principal. A student who fails to pass
+      a course will be awarded grade ‘F’ (Fail) A student may enroll in a Dropped/Failed/Withdrawn
+      of course in the following semester by paying the prescribed fee for the course.
+      This must be done within the time specified in the College academic calendar.
+  utter_regulations_incomplete_semester_or_course:
+  - text: 'A student unable to complete a course on medical grounds will be awarded
+      grade ‘I’ (Incomplete). Incomplete course must be completed in the following
+      semester, without paying any additional tuition fee. Extension may be granted
+      in special cases with the approval of the Principal. /nIf a student is unable
+      to appear in the Final Examination of a course on medical grounds, grade “I”
+      will be awarded in the course. /nA student may be allowed to appear in the Special
+      Final Examination of a course, to be held before the commencement of the next
+      semester. The student will not join the next following semester if he/she is
+      unable to take Special Final Examination within the specified time limit. In
+      order to attend this special examination, the student must have: /n 1-Fulfilled
+      minimum attendance requirement /n 2-Been admitted as a patient in a recognized
+      hospital. If a student has not been hospitalized, he/she will be examined by
+      the University Medical Board comprising Chief Medical Officer and one Medical
+      Officer of the University.'
+  utter_regulations_course_withdrawal:
+  - text: 'A student requesting withdrawal from a course during a semester will be
+      awarded grade ‘W’ in the withdrawn course, subject to the following conditions:
+      1-Request to withdraw from a course is made at least seven days before the start
+      of Finals Week. 2-Course fee will not be refunded/transferred. 3-The student
+      must add the withdrawn prerequisite course in the next semester by paying the
+      prescribed fee for the course.'
+  utter_regulations_semester_withdrawal:
+  - text: 'A student requesting for semester withdrawal on genuine grounds within
+      the time specified in the College Academic Calendar, may be allowed to withdraw
+      the following (next) semester subject to the following conditions: 1-Written
+      permission to withdraw from the current semester must be obtained from the Principal.
+      2-Semester fee will not be refunded/transferred. 3-Such students must join the
+      following semester. 4-The semester withdrawal will only be allowed once in a
+      degree program.'
+  utter_regulations_semester_freeze:
+  - text: 'A student requesting for semester freeze on genuine grounds within the
+      time specified in the College Academic Calendar, may be allowed to freeze the
+      following (next) semester subject to the following conditions: /n1-Written permission
+      to freeze the current semester must be obtained from the Principal. /n2-Semester
+      fee, if deposited, will be transferred to the next semester. /n3-Such students
+      must join the following semester. /n4-The semester freeze will only be allowed
+      once in a degree program.'
+  utter_regulations_change_of_section:
+  - text: No student will be allowed to change his/her section during semester. However,
+      the College Council may consider special cases on solid grounds within the first
+      week of the commencement of the semester.
+  utter_regulations_change_of_session:
+  - text: No student will be transferred, under any circumstances, from afternoon/evening
+      session to the morning session and vice versa. However, transfer from afternoon
+      to evening and vice versa will be approved by the Principal. Girls will be given
+      preference for changing from evening to morning.
+  utter_regulations_student_assesment:
+  - text: 'The course teacher will be responsible for assessing a students’ performance.
+      The following assessment methods will be used: /n 1-Tests, quizzes, assignments,
+      presentations, attendance, and class participation. /n 2-The midterm examinations,
+      which shall be held eight weeks after the start of a semester. /n 3-The final
+      examinations, which shall be held at the end of the semester. /n 4-Grade distribution
+      in a course will be as follows: /n   - Midterm Examination 35% /n   - Final
+      Examination 40% /n   - Sessional (assignment, test etc) 25% /n 5-Final project/research
+      thesis shall be examined by the concerned project supervisor and the College
+      Final Project Committee constituted for this purpose. /n 6-Minimum 50% marks
+      (grade ‘D’) are required to pass a course.'
+  utter_regulations_grading_system:
+  - text: Visit the [link](https://pucit.edu.pk/academic-regulations/)
+  utter_regulations_dress_code_for_males:
+  - text: Shorts of any kind must not be part of the attire. /nClothes should not
+      be skin-tight. /nLoose-neck shirts are prohibited. /nLow-hung (hanging below
+      waistline) pants are not allowed. /nSunglasses or p-caps must not be worn in
+      classrooms. /nSlippers are not allowed. /nShirts with pictures or text printed
+      on front or back are not allowed. However, shirts with small logos or emblems
+      are acceptable.
+  utter_regulations_dress_code_for_females:
+  - text: Dupatta must be part of the attire. /nShirts should not be over-fitted,
+      or see-through. /nShirt length should at least knee-length or longer. /nLength
+      of sleeves must be three quarters or more. /nNecklines must be non-revealing.
+      /nFitted trousers, choori-dar pajamas, or tights must be accompanied by half-length
+      (half-way between knees and ankles) or longer length shirts without slits. /nTrousers
+      must be ankle-length or longer.
+  utter_regulations_penalty_for_dress_code_voilation:
+  - text: For a first offense, the student will be called by the respective dress
+      code supervisor and will be given a verbal warning. /nFor a second offense,
+      the student will be fined an amount of Rs. 3000. /nFor a third offense, the
+      case will be forwarded to DC.
+  utter_info_Blood_donor_society:
+  - text: PUCIT BDS is a non-profitable welfare society in PUCIT working behind the
+      curtains with all it’s kith and kiln and always doing it’s level best to entertain
+      every single blood request with a blood donor of their required type.
+  utter_info_Computer_society:
+  - text: The main objective of Computer Society is to develop a dynamic team of competitors
+      that can lead PUCIT to the path of excellence in the various areas of information
+      technology. The society is responsible for organizing local and national level
+      seminars, student workshops on current technologies, and other activities, including
+      software competitions, speed programming competitions, Internet gaming contest,
+      and IT quiz competitions.
+  utter_info_PUCIT_media_society:
+  - text: The basic idea is to provide students with an opportunity to develop life
+      skills which will enable them to analyze the forms of modern communication and
+      to help students to become wise consumers of media. We want to represent PUCIT
+      and the life at PUCIT. It will be the part of our duties to cover all types
+      of on campus and outside campus activities and events. PUMS will promote the
+      image of PUCIT locally and internationally via different use of media channels.
+      Students are the main body of PUMS and they will contribute stories, photos,
+      videos and articles about PUCIT which covers events, celebrations and different
+      activities. PUMS will provide the students with the opportunities to express
+      and develop their ideas and talent through media, technology and communication.
+      PUMS will be led by individuals who represent students in general from all departments
+      and will perform their duties with spirit of responsibility and great leadership
+      skills to accomplish approves task and activities. PUMS will combine several
+      skills and ideas to end up with creative product. Any Student who is creative
+      and willing to learn is welcomed to join and become a member of this ever-growing
+      group.
+  utter_info_Sports_society:
+  - text: The Sports Society organizes various student and faculty (both male and
+      female) sports activities in the College, including Cricket, Badminton, Table
+      Tennis, Athletics, Chess, and Tug-of-War. It organizes the yearly PUCIT Olympics,
+      a mega annual sports festival. The society also facilitates students to take
+      part in the various sports competitions held at the university and inter university
+      levels.
+  utter_info_Literary_society:
+  - text: Literary Society LS-PUCIT provides platform to the students to showcase
+      their talents. The main objective of this society is to keep the light of literature
+      alive in students. It is involved in variety of activities aimed at building
+      student’s confidence and grooming their flairs.  This society is responsible
+      for arranging different competitions for interested students to exhibit their
+      skills.
+  utter_info_Event_management_society:
+  - text: Main objective of EMS is to arrange and organize co-curricular events inside
+      and outside PUCIT. Since its formation, the society has been working hard to
+      promote PUCIT, arranging college trips, educational workshops, exhibitions,
+      book fairs, and graduation night dinners for outgoing students. The society
+      also helps college administration in organizing various events, including the
+      orientation Ceremony for new students
+  utter_contact_info:
+  - text: مزید معلومات کے لئے برائے مہربانی ہمیں 99212240 ، 111-923-923 اضافی 149،161،130
+      پر فون کریں یا ہمیں info@pucit.edu.pk پر ای میل کریں یا آپ  Visit the [link](https://pucit.edu.pk/contact-us/)
+  utter_guideline_to_apply_for_entrytest:
+  - text: "Apply Online [link](https://entrytest.pucit.edu.pk/) (UC browser, Mozilla\
+      \ Firefox and Internet explorer are preferable for apply) Follow all the instructions\
+      \ below before proceeding Form: 1.From the menu on the left side, click on Registration\
+      \ Form and fill it by providing all the required correct information . 2.Upload\
+      \ your recent 1.5 x 1.5 size picture in jpeg/jpg/png format. File size should\
+      \ not be more than 1 MB. Your FACE should be clearly visible in the uploaded\
+      \ picture. Irrelevant uploading will lead to cancellation of your candidature.\
+      \ 3.Carefully enter your up-to-date particulars. Make sure that there are NO\
+      \ spelling mistakes. 4.There are two buttons at the bottom of the Registration\
+      \ Form namely SAVE and FINALIZE. 5.After providing all the required information,\
+      \ click on the SAVE button to save your information. Once saved, you can still\
+      \ update your provided information. 6.Click on the FINALIZE button only when\
+      \ you are ready to submit the application. Once the application form is finalized,\
+      \ you will NOT be able to edit your information. 7.After finalizing your Registration\
+      \ Form, you may print the application form for your personal record by clicking\
+      \ on Print Application from the left menu. 8.Once the Registration Form has\
+      \ been finalized, click on Challan Form from the left menu. Click on DOWNLOAD\
+      \ CHALLAN FORM button to download the challan form in PDF format. Once downloaded,\
+      \ take its print and deposit the challan form along with Entrance Test Fee in\
+      \ your nearest HBL Branch. Keep the depositor's copy of your challan form for\
+      \ your personal record. 9.Your Roll Number Slip will be visible three working\
+      \ days after the submission of Entrance Test Fee. You can view your roll number\
+      \ slip by clicking on Roll Number Slip from the left menu. Click on DOWNLOAD\
+      \ ROLL NUMBER SLIP button to download your roll number slip in PDF format. If\
+      \ you do not see your roll number slip after three working days of fee submission,\
+      \ please visit PUCIT Admission Office (University of the Punjab, Old Campus,\
+      \ Shahrah-e-Quaid-e-Azam, The Mall, Lahore)along with /tThe original depositor's\
+      \ copy of your challan form. /tA print of your application form. 10.The entrance\
+      \ test registration fee is neither refundable nor transferable. For more detail\
+      \ visit http://pucit.edu.pk/admission/admissions-schedule.html"
+  utter_admission_start:
+  - text: PUCIT offers admission to all undergraduate programs for Fall Semester only.
+      The cycle opens in June/July. Exact dates are announced through print and electronic
+      media (newspaper, PUCIT website and social media).
+  utter_standardized_tests:
+  - text: No,PUCIT  does not consider standardized tests for admission (NTS,SAT, etc.)
+  utter_entrytest_place:
+  - text: The PUCIT Entrance Test is held at BISE halls, Examination Halls University
+      of the Punjab, or on Campus. The information of venue is clearly mentioned on
+      the entrance test roll no. slip of the applicant who wishes to appear in PUCIT
+      entrance test.
+  utter_documents_to_bring_test_center:
+  - text: "Bring the following original documents at the test center:\nOriginal PUCIT\
+      \ Entrance Test Roll Number Slip\nOne of the following Original Picture Identity:\n\
+      \t(a)CNIC\n\tb)Matric/Intermediate result card with picture\n\t(c)Driving License\n\
+      Note: Photocopies of the above mentioned documents are not accepted. Form-B\
+      \ is also not acceptable as it does not have picture on it."
+  utter_donot_bring_required_document:
+  - text: "In addition to the above mentioned documents which prove your identity,\
+      \ you can only bring a ball point to take the test and write answers of the\
+      \ questions. Any other document is not allowed in the exam hall including the\
+      \ following:/nA blank paper to solve your test.\nAny helping material\nAny document\
+      \ other than those mentioned in question 5"
+  utter_bring_other_things:
+  - text: If you found in possession of any of the above mentioned things in 8, your
+      test will be cancelled and you will not be able to apply for admission to any
+      of the academic programs at PUCIT.
+  utter_retake_entrytest:
+  - text: No. You are not allowed to re-take the entrance test if you miss it once.
+      You can apply for the entrance test next year.
+  utter_entrytest_shifts:
+  - text: Yes. Only BS Entrance Test is held in multiple shifts. M.Sc., M.Phil., and
+      PhD Entrance Tests are held in single shift only. The shift, in which the applicant
+      has been scheduled to appear, is mentioned on the Roll Number Slip.
+  utter_miss_my_test_slot:
+  - text: No. You are not allowed to appear in the other shift of the entrance test
+      if you miss your own. You will apply for a new admission next year.
+  utter_undergraduate_merit_formula:
+  - text: 70% is the Academic Record score, and 30% is the PUCIT entrance test score.
+  utter_graduate_merit_formula:
+  - text: 40% is the Academic Record score, 50% is the PUCIT entrance test score,
+      and 10% is the Interview score.
+  utter_scholarships:
+  - text: PUCIT offers merit and need based scholarships every year from the University
+      of the Punjab and its own resources to deserving students. Moreover, the HEC
+      and Government of the Punjab also announce need–based HEC and PEEF scholarships
+      every year.
+  utter_admission_in_afternoon:
+  - text: Yes, PUCIT offers self-support/replica afternoon programs along with morning/regular
+      programs for BS & M.Sc. Such programs are not offered for the M.Phil. and PhD
+      programs.
+  utter_fees_for_undergraduate:
+  - text: The semester fee for an undergraduate program is around Rs. 25,000/- per
+      semester for the morning/regular programs and approximately Rs. 39,000/- per
+      semester for the self-support/replica/ afternoon programs.
+  utter_fees_for_graduate:
+  - text: The semester fees for the M.Phil. and PhD programs are approximately Rs.18,000/-
+      and Rs.25,000/- respectively.
+  utter_HEC_recognized_institute:
+  - text: Yes,PUCIT is recognized by the Higher Education Commission (HEC) and accredited
+      by HEC’s  National Computing Education Accreditation Council (NCEAC) in the
+      highest ‘W’ category, given only to less than 20% of the computing programs
+      in the country.
+  utter_Hostel_faculty:
+  - text: University of the Punjab hostel facility is available for students admitted
+      to the morning/regular programs only.
+  utter_transport_facility:
+  - text: Yes, University of the Punjab bus service is available for different routes
+      in the city.
+  utter_timings_for_classes:
+  - text: Classes (lectures and laboratory sessions) are held from 8:00 am to 5:30
+      pm.
+  utter_spring_admission:
+  - text: No,PUCIT does not offer admissions for the Spring semester?
+  utter_undergraduate_classes_place:
+  - text: The classes for BS programs are held at both campuses of the college, i.e.
+      PUCIT Old campus and PUCIT New Campus. MSc Computer Science classes are held
+      at PUCIT Old Campus and MSc GIS classes are held at PUCIT New Campus.
+  utter_graduate_classes_place:
+  - text: The classes for graduate programs are held at both campuses of the college,
+      i.e. PUCIT Old campus and PUCIT New Campus.
+  utter_short_courses:
+  - text: Yes, the details of short courses can be seen at the PUCIT website (www.pucit.edu.pk).
+  utter_PhD_teachers:
+  - text: ' PUCIT currently has 19 PhD faculty members, including three Fulbright
+      Scholars. Around 20 college teachers are currently pursuing their PhDs. Three
+      PUCIT teachers are also Erasmus Mundus Scolars.'
+  utter_areas_of_research:
+  - text: "The PhD teachers are PUCIT are currently pursuing research in the following\
+      \ areas:\nComputer Vision and Image Processing\nBusiness Process Management\n\
+      Natural Language Processing\nCloud Computing\nMobile Edge Computing\nBig Data\n\
+      Applied Machine Learning\nComputer Networks\nInternet of Things\nMachine-to-Machine\
+      \ (M2M) Communication\nOptical Burst Switched Networks\nParallel Computing\n\
+      Parallel and Distributed Algorithms, Processing and Architectures\nSpatial Data\
+      \ Management System\nSoftware Defined Networking\nMachine Learning"
+  utter_seats_for_undergraduate:
+  - text: "BS Computer Science (Morning/Regular) => 48 for each campus\nBS Computer\
+      \ Science (Self-support/Replica) =>47 for each campus\nBS Information Technology\
+      \ (Morning/Regular) => 48 for each campus\nBS Information Technology (Self-support/Replica)\
+      \ =>47 for each campus\nBS Software Engineering (Morning/Regular) => 48 for\
+      \ each campus\nBS Software Engineering (Self-support/Replica) => 47 for each\
+      \ campus\nMSc Computer Science (Morning/Regular) => 54 for each campus\nMSc\
+      \ Computer Science (Self-support/Replica) => 52 for each campus\nMSc GIS (Morning/Regular)\
+      \ => 54 for each campus\nMSc GIS (Self-support/Replica) => 52 for each campus"
+  utter_seats_for_graduate:
+  - text: "MPhil Computer Science => 40 for each campus \nPhD Computer Science =>\
+      \ 20 for each campus\nMPhil Remote Sensing and GIS (New Campus)=>15"
+  utter_migrate:
+  - text: migrate
+  utter_cocurricular_activities:
+  - text: cocurricular_activities
+  utter_exchange_program:
+  - text: exchange_program
+  utter_reserve_seats:
+  - text: reserve seats
+  utter_default_fallback:
+  - text: I donot get what you want to say, can you repharase your question?
+actions:
+- utter_init
+- utter_greet
+- utter_goodbye
+- choose_degree
+- utter_calculate_aggregate_BS
+- utter_calculate_aggregate_MSc
+- utter_programs_bs_cs
+- utter_programs_bs_se
+- utter_programs_bs_it
+- utter_programs_msc_cs
+- utter_programs_mphill_cs
+- utter_programs_PHD
+- utter_procedure_to_apply_for_BS_and_MSc
+- utter_procedure_to_apply_for_MPhill
+- utter_procedure_to_apply_for_PHD
+- utter_merit_formula_for_BS
+- utter_merit_formula_for_MSc
+- utter_merit_formula_for_MPhill
+- utter_merit_formula_for_PhD
+- utter_eligibility_criteria_BS
+- utter_eligibility_criteria_MSc
+- utter_eligibility_criteria_MPhill
+- utter_eligibility_criteria_PhD
+- utter_fee_structure_for_BS
+- utter_fee_structure_for_MSC
+- utter_fee_structure_for_Mphill
+- utter_fee_structure_for_PhD
+- utter_priciple_list_bs_it
+- utter_priciple_list_bs_se
+- utter_priciple_list_bs_cs
+- utter_priciple_list_ms_cs
+- utter_vc_list_bs_it
+- utter_vc_list_bs_cs
+- utter_vc_list_bs_se
+- utter_vc_list_ms_cs
+- utter_calender
+- utter_time_table
+- utter_regulations_attandence
+- utter_regulations_workload
+- utter_regulations_incomplete_semester_or_course
+- utter_regulations_course_withdrawal
+- utter_regulations_semester_withdrawal
+- utter_regulations_semester_freeze
+- utter_regulations_change_of_section
+- utter_regulations_change_of_session
+- utter_regulations_student_assesment
+- utter_regulations_grading_system
+- utter_regulations_dress_code_for_males
+- utter_regulations_dress_code_for_females
+- utter_regulations_penalty_for_dress_code_voilation
+- utter_info_Blood_donor_society
+- utter_info_Computer_society
+- utter_info_PUCIT_media_society
+- utter_info_Sports_society
+- utter_info_Literary_society
+- utter_info_Event_management_society
+- utter_contact_info
+- utter_guideline_to_apply_for_entrytest
+- utter_admission_start
+- utter_standardized_tests
+- utter_entrytest_place
+- utter_documents_to_bring_test_center
+- utter_donot_bring_required_document
+- utter_bring_other_things
+- utter_retake_entrytest
+- utter_entrytest_shifts
+- utter_miss_my_test_slot
+- utter_undergraduate_merit_formula
+- utter_graduate_merit_formula
+- utter_scholarships
+- utter_admission_in_afternoon
+- utter_fees_for_undergraduate
+- utter_fees_for_graduate
+- utter_HEC_recognized_institute
+- utter_Hostel_faculty
+- utter_transport_facility
+- utter_timings_for_classes
+- utter_spring_admission
+- utter_undergraduate_classes_place
+- utter_graduate_classes_place
+- utter_short_courses
+- utter_PhD_teachers
+- utter_areas_of_research
+- utter_seats_for_undergraduate
+- utter_seats_for_graduate
+- utter_migrate
+- utter_cocurricular_activities
+- utter_exchange_program
+- utter_rules_and_regulations
+- utter_reserve_seats
+- utter_default_fallback
+- utter_ask_degree
+- utter_ask_bs_program
